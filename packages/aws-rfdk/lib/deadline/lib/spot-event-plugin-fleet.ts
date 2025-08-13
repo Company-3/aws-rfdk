@@ -88,6 +88,12 @@ export interface SpotEventPluginFleetProps {
   readonly maxCapacity: number;
 
   /**
+   * The maximum capacity that the Spot Fleet can grow to with on-demand instances.
+   * See https://docs.thinkboxsoftware.com/products/deadline/10.2/1_User%20Manual/manual/event-spot.html#spot-fleet-requests
+   */
+  readonly onDemandMaxCapacity?: number;
+
+  /**
    * Types of instances to launch.
    */
   readonly instanceTypes: InstanceType[];
@@ -407,6 +413,12 @@ export class SpotEventPluginFleet extends Construct implements ISpotEventPluginF
   public readonly maxCapacity: number;
 
   /**
+   * The maximum capacity that the Spot Fleet can grow to with on-demand instances.
+   * See https://docs.thinkboxsoftware.com/products/deadline/10.2/1_User%20Manual/manual/event-spot.html#spot-fleet-requests
+   */
+  public readonly onDemandMaxCapacity: number;
+
+  /**
    * Deadline groups the workers need to be assigned to.
    *
    * @default - Workers are not assigned to any group
@@ -499,6 +511,7 @@ export class SpotEventPluginFleet extends Construct implements ISpotEventPluginF
     this.instanceTypes = props.instanceTypes;
     this.allocationStrategy = props.allocationStrategy ?? SpotFleetAllocationStrategy.LOWEST_PRICE;
     this.maxCapacity = props.maxCapacity;
+    this.onDemandMaxCapacity = props.onDemandMaxCapacity ?? 0;
     this.validUntil = props.validUntil;
     this.keyName = props.keyName;
     this.context = props.context;
