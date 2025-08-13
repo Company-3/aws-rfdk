@@ -170,6 +170,12 @@ export interface SpotFleetRequestProps {
   readonly TargetCapacity: number;
 
   /**
+   * In order to work with Deadline, the 'On Demand Target Capacity' of the Spot fleet Request is
+   * the maximum number of Workers that will be started on-demand (non-spot)
+   */
+  readonly OnDemandTargetCapacity: number;
+
+  /**
    * Indicates whether running Spot Instances are terminated when the Spot Fleet request expires.
    */
   readonly TerminateInstancesWithExpiration: boolean;

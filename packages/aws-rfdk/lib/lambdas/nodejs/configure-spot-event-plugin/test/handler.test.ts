@@ -83,6 +83,7 @@ describe('SEPConfiguratorResource', () => {
           }],
           ReplaceUnhealthyInstances: true,
           TargetCapacity: 1,
+          OnDemandTargetCapacity: 0,
           TerminateInstancesWithExpiration: true,
           Type: SpotFleetRequestType.MAINTAIN,
           ValidUntil: Expiration.atDate(new Date(2022, 11, 17)).date.toISOString(),

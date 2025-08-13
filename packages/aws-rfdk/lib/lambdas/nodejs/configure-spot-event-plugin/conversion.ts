@@ -30,6 +30,7 @@ export function convertSpotFleetRequestConfiguration(spotFleetRequestConfigs: Sp
       LaunchTemplateConfigs: sfrConfigs.LaunchTemplateConfigs ? validateLaunchTemplateConfigs(sfrConfigs.LaunchTemplateConfigs, `${group_name}.LaunchTemplateConfigs`) : undefined,
       ReplaceUnhealthyInstances: convertToBoolean(sfrConfigs.ReplaceUnhealthyInstances, `${group_name}.ReplaceUnhealthyInstances`),
       TargetCapacity: convertToInt(sfrConfigs.TargetCapacity, `${group_name}.TargetCapacity`),
+      OnDemandTargetCapacity: convertToInt(sfrConfigs.OnDemandTargetCapacity, `${group_name}.OnDemandTargetCapacity`),
       TerminateInstancesWithExpiration: convertToBoolean(sfrConfigs.TerminateInstancesWithExpiration, `${group_name}.TerminateInstancesWithExpiration`),
       Type: validateString(sfrConfigs.Type, `${group_name}.Type`),
       ValidUntil: validateStringOptional(sfrConfigs.ValidUntil, `${group_name}.ValidUntil`),

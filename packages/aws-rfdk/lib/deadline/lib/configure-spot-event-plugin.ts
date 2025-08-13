@@ -562,6 +562,7 @@ export class ConfigureSpotEventPlugin extends Construct {
       // In order to work with Deadline, the 'Target Capacity' of the Spot fleet Request is
       // the maximum number of Workers that Deadline will start.
       TargetCapacity: fleet.maxCapacity,
+      OnDemandTargetCapacity: fleet.onDemandMaxCapacity,
       TerminateInstancesWithExpiration: true,
       // In order to work with Deadline, Spot Fleets Requests must be set to maintain.
       Type: SpotFleetRequestType.MAINTAIN,
